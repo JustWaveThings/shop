@@ -9,7 +9,7 @@ function Header() {
         <Link
           to="/"
           className="header--title">the Shop</Link>
-        <div className="header--subtitle"> Your one-stop shop for all your shop needs</div>
+        <div className="header--subtitle"> Your one-stop shop</div>
       </div>
       <div className="header--cont--center">
         <Link to="catalog" className="header--link--catalog">Catalog</Link>
