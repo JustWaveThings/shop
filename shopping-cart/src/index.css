@@ -23,7 +23,6 @@ body {
   opacity: 0.9;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 
@@ -166,7 +165,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-
+  gap: 1rem;
+  margin: 2rem;
+  flex-wrap: wrap;
   height: 100vh;
 }
 
@@ -257,4 +258,78 @@ em {
 a {
   text-decoration: none;
   color: white;
+}
+
+.product--cont{
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  gap: 1rem;
+  background: rgba(128, 128, 128, 0.342);
+  padding: 1rem;
+  border-radius: .25rem;
+
+}
+
+.product--cont--bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product--cont--bottom--bottom{
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+
+}
+
+.product--qty--input{
+  width: 3rem;
+}
+
+.product--qty--increment{
+  flex-shrink: 0;
+  background-color: white;
+
+}
+
+.product--name, .product--qty--increment, .product--qty--input,  .product--add--to--cart {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.product--add--to--cart{
+  background-color: black;
+  color: white;
+  opacity: .78;
+}
+
+.product--add--to--cart:hover, .product--qty--increment:hover{
+  scale: 103%;
+}
+
+.product--price{
+  font-weight: 500;
+  font-size: .9rem;
+
+}
+
+.product--qty--increment, .product--add--to--cart, .product--qty--input{
+  border-radius: .25rem;
+  border: none;
+  padding: .25rem .75rem;
+}
+
+.product--qty--label {
+  margin-right: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+
 }
