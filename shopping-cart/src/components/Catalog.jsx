@@ -3,23 +3,30 @@ import Product from './Product';
 import getProducts from '../api';
 import { useLoaderData, defer, Await } from 'react-router-dom';
 
-export function loader() {
+export async function loader() {
 	return defer({
 		product: getProducts()
 	});
 }
 
 function Catalog() {
-	const loaderData = useLoaderData();
+	const data = useLoaderData();
 
 	return (
 		<Suspense fallback={<h2>Loading Products... </h2>}>
-			<Await resolve={loaderData.product}>
-				<div className="catalog--cont">
-					<Product />
-					<Product />
-					<Product />
-				</div>
+			<Await resolve={data.product}>
+				{(product) => (
+					<div className="catalog--cont">
+						{product?.map((prod) => (
+							<Product
+								image={prod.image}
+								description={prod.description}
+								price={prod.price}
+								title={prod.title}
+							/>
+						))}
+					</div>
+				)}
 			</Await>
 		</Suspense>
 	);
