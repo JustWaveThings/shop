@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
@@ -39,6 +39,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
+	const [addToCart, setAddToCart] = useState({});
 	return <RouterProvider router={router}></RouterProvider>;
 }
 

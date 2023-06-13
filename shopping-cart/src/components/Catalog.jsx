@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Fragment, Suspense } from 'react';
 import Product from './Product';
 import getProducts from '../api';
 import { useLoaderData, defer, Await } from 'react-router-dom';
@@ -18,12 +18,14 @@ function Catalog() {
 				{(product) => (
 					<div className="catalog--cont">
 						{product?.map((prod) => (
-							<Product
-								image={prod.image}
-								description={prod.description}
-								price={prod.price}
-								title={prod.title}
-							/>
+							<Fragment key={prod.id}>
+								<Product
+									image={prod.image}
+									description={prod.description}
+									price={prod.price}
+									title={prod.title}
+								/>
+							</Fragment>
 						))}
 					</div>
 				)}
