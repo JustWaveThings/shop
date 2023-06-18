@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 function Product({
@@ -5,10 +6,12 @@ function Product({
 	description,
 	title,
 	price,
+	id,
 	decrementQty,
 	handleChange,
 	incrementQty,
-	addProductToCart
+	addProductToCart,
+	qty
 }) {
 	return (
 		<div className="product--cont">

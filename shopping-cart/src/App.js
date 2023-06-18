@@ -8,7 +8,7 @@ import {
 import './index.css';
 import Layout from './components/Layout.jsx';
 import Home from './components/Home.jsx';
-import Catalog, { loader as productLoader } from './components/Catalog.jsx';
+import Catalog /* { loader as productLoader } */ from './components/Catalog.jsx';
 import Cart from './components/Cart.jsx';
 import NotFound from './components/NotFound.jsx';
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter(
 			<Route
 				path="catalog"
 				element={<Catalog />}
-				loader={productLoader}
+				//loader={productLoader}
 			/>
 			<Route
 				path="cart"
