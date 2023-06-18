@@ -39,7 +39,6 @@ const router = createBrowserRouter(
 );
 
 function App() {
-	const [addToCart, setAddToCart] = useState({});
 	return <RouterProvider router={router}></RouterProvider>;
 }
 
