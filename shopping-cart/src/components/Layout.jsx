@@ -5,28 +5,11 @@ import Footer from './Footer.jsx';
 
 function Layout() {
 	const [qty, setQty] = useState(0);
-
-	const incrementQty = () => {
-		setQty((prevQty) => +prevQty + 1);
-	};
-
-	const decrementQty = () => {
-		setQty((prevQty) => +prevQty - 1);
-	};
-
-	const addProductToCart = (qty, title, price) => {
-		console.log(
-			`added product ${title} to cart Qty ${qty} at price - $${price} per item.`
-		);
-	};
-
-	function handleChange(value) {
-		setQty(value);
-	}
+	console.log(qty);
 	return (
 		<>
-			<Header />
-			<Outlet />
+			<Header qty={qty} />
+			<Outlet context={[qty, setQty]} />
 			<Footer />
 		</>
 	);

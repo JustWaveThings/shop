@@ -3,6 +3,7 @@ import React, { Fragment, Suspense } from 'react';
 import Product from './Product';
 // import getProducts from '../api';
 //import { useLoaderData, defer, Await } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 
 /* export async function loader() {
 	return defer({
@@ -10,14 +11,27 @@ import Product from './Product';
 	});
 } */
 
-function Catalog({
-	incrementQty,
-	decrementQty,
-	addProductToCart,
-	handleChange,
-	qty,
-	setQty
-}) {
+function Catalog() {
+	const [qty, setQty] = useOutletContext();
+
+	function incrementQty() {
+		qty >= 0 ? setQty((prevValue) => prevValue + 1) : null;
+	}
+
+	function decrementQty() {
+		qty >= 1 ? setQty((prevValue) => prevValue - 1) : null;
+	}
+
+	function handleChange(value) {
+		setQty(+value);
+	}
+
+	function addProductToCart(id, title, price) {
+		console.log(
+			`added product ${title} to cart Qty ${qty} at price - $${price} per item. item id ${id}`
+		);
+	}
+
 	//const data = useLoaderData();
 	const fakeData = [
 		{
@@ -53,10 +67,11 @@ function Catalog({
 						price={prod.price}
 						title={prod.title}
 						id={prod.id}
-						decrementQty={decrementQty}
 						handleChange={handleChange}
-						incrementQty={incrementQty}
 						addProductToCart={addProductToCart}
+						qty={qty}
+						incrementQty={incrementQty}
+						decrementQty={decrementQty}
 					/>
 				</Fragment>
 			))}

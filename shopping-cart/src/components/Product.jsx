@@ -28,27 +28,27 @@ function Product({
 				<div className="product--cont--bottom--bottom">
 					<div className="product--qty--label">Qty:</div>
 					<button
-						onClick={decrementQty}
+						onClick={() => decrementQty()}
 						className="product--qty--increment">
 						-
 					</button>
 					<input
+						value={qty}
 						onChange={(e) => handleChange(e.target.value)}
 						className="product--qty--input"
 						placeholder={0}
-						value={qty}
-						type="number"
 						min={0}
+						type="number"
 					/>
 
 					<button
-						onClick={incrementQty}
+						onClick={() => incrementQty()}
 						className="product--qty--increment">
 						+
 					</button>
 				</div>
 				<button
-					onClick={() => addProductToCart(qty, title, price)}
+					onClick={() => addProductToCart(id, title, price)}
 					className="product--add--to--cart">
 					{' '}
 					Add to Cart{' '}
