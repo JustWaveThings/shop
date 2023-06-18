@@ -1,37 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Product(props) {
-	const [qty, setQty] = useState(0);
-
-	const incrementQty = () => {
-		setQty((prevQty) => +prevQty + 1);
-	};
-
-	const decrementQty = () => {
-		setQty((prevQty) => +prevQty - 1);
-	};
-
-	const addProductToCart = (qty, title, price) => {
-		console.log(
-			`added product ${title} to cart Qty ${qty} at price - $${price} per item.`
-		);
-	};
-
-	function handleChange(value) {
-		setQty(value);
-	}
-
+function Product({
+	image,
+	description,
+	title,
+	price,
+	decrementQty,
+	handleChange,
+	incrementQty,
+	addProductToCart
+}) {
 	return (
 		<div className="product--cont">
 			<img
-				src={`${props.image}`}
-				alt={`${props.description}`}
+				src={`${image}`}
+				alt={`${description}`}
 				className="product--cont--image"
 			/>
 			<div className="product--cont--bottom">
 				<div className="product--cont--bottom--top">
-					<div className="product--name">{props.title}</div>
-					<div className="product--price">${props.price}</div>
+					<div className="product--name">{title}</div>
+					<div className="product--price">${price}</div>
 				</div>
 				<div className="product--cont--bottom--bottom">
 					<div className="product--qty--label">Qty:</div>
@@ -56,7 +45,7 @@ function Product(props) {
 					</button>
 				</div>
 				<button
-					onClick={() => addProductToCart(qty, props.title, props.price)}
+					onClick={() => addProductToCart(qty, title, price)}
 					className="product--add--to--cart">
 					{' '}
 					Add to Cart{' '}
