@@ -24,6 +24,7 @@ function Catalog() {
 									description={prod.description}
 									price={prod.price}
 									title={prod.title}
+									id={prod.id}
 								/>
 							</Fragment>
 						))}
