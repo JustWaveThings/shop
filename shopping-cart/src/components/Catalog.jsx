@@ -12,21 +12,16 @@ import { useOutletContext } from 'react-router-dom';
 } */
 
 function Catalog() {
-	const [qty, setQty] = useOutletContext();
+	const [cart, setCart] = useOutletContext();
 
-	function incrementQty() {
-		qty >= 0 ? setQty((prevValue) => prevValue + 1) : null;
-	}
+	function addProductToCart(id, qty, price, title) {
+		const addProduct = {
+			id: id,
+			qty: qty,
+			price: price,
+			title: title
+		};
 
-	function decrementQty() {
-		qty >= 1 ? setQty((prevValue) => prevValue - 1) : null;
-	}
-
-	function handleChange(value) {
-		setQty(+value);
-	}
-
-	function addProductToCart(id, title, price) {
 		console.log(
 			`added product ${title} to cart Qty ${qty} at price - $${price} per item. item id ${id}`
 		);
@@ -43,8 +38,8 @@ function Catalog() {
 			category: "men's clothing",
 			image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
 			rating: { rate: 3.9, count: 120 }
-		}
-		/* {
+		},
+		{
 			id: 2,
 			title: 'Mens Casual Premium Slim Fit T-Shirts ',
 			price: 22.3,
@@ -54,7 +49,7 @@ function Catalog() {
 			image:
 				'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
 			rating: { rate: 4.1, count: 259 }
-		} */
+		}
 	];
 	return (
 		<div className="catalog--cont">
@@ -67,11 +62,7 @@ function Catalog() {
 						price={prod.price}
 						title={prod.title}
 						id={prod.id}
-						handleChange={handleChange}
 						addProductToCart={addProductToCart}
-						qty={qty}
-						incrementQty={incrementQty}
-						decrementQty={decrementQty}
 					/>
 				</Fragment>
 			))}

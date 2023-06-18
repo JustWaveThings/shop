@@ -4,12 +4,12 @@ import { Outlet } from 'react-router-dom';
 import Footer from './Footer.jsx';
 
 function Layout() {
-	const [qty, setQty] = useState(0);
-	console.log(qty);
+	const [cart, setCart] = useState([] || null);
+	console.log(cart);
 	return (
 		<>
-			<Header qty={qty} />
-			<Outlet context={[qty, setQty]} />
+			<Header />
+			<Outlet context={[cart, setCart]} />
 			<Footer />
 		</>
 	);

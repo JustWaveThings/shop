@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 
 function Product({
 	image,
@@ -7,12 +7,23 @@ function Product({
 	title,
 	price,
 	id,
-	decrementQty,
 	handleChange,
-	incrementQty,
-	addProductToCart,
-	qty
+	addProductToCart
 }) {
+	const [productQty, setProductQty] = useState(0);
+
+	function handleChange(value) {
+		setProductQty(+value);
+	}
+
+	function incrementQty() {
+		productQty >= 0 ? setProductQty((prevValue) => prevValue + 1) : null;
+	}
+
+	function decrementQty() {
+		productQty >= 1 ? setProductQty((prevValue) => prevValue - 1) : null;
+	}
+
 	return (
 		<div className="product--cont">
 			<img
@@ -33,7 +44,7 @@ function Product({
 						-
 					</button>
 					<input
-						value={qty}
+						value={productQty}
 						onChange={(e) => handleChange(e.target.value)}
 						className="product--qty--input"
 						placeholder={0}
@@ -48,7 +59,7 @@ function Product({
 					</button>
 				</div>
 				<button
-					onClick={() => addProductToCart(id, title, price)}
+					onClick={() => addProductToCart(id, title, price, productQty)}
 					className="product--add--to--cart">
 					{' '}
 					Add to Cart{' '}
