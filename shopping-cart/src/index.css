@@ -402,3 +402,7 @@ button {
 .product--qty--input .cart {
 	background-color: #ccc;
 }
+
+.cart--title {
+	margin-left: 1rem;
+}
