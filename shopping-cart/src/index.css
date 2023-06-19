@@ -327,7 +327,7 @@ button {
 
 .cart--item--cont {
 	display: grid;
-	grid-template-columns: 2fr 1fr 1fr 1fr 2fr 1fr;
+	grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
 	gap: 1rem 1rem;
 	align-items: center;
 	padding: 10px;
@@ -362,8 +362,17 @@ button {
 .cart--item--qty,
 .cart--item--total {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	gap: 0.25rem;
+}
+
+.cart--item--title,
+.cart--item--qty {
+	justify-content: flex-start;
+}
+
+.cart--item--total {
+	justify-content: flex-end;
 }
 
 .cart--table--checkoutTotal {
@@ -388,4 +397,8 @@ button {
 .cart--table-checkoutButton:disabled {
 	scale: 105%;
 	cursor: not-allowed;
+}
+
+.product--qty--input .cart {
+	background-color: #ccc;
 }

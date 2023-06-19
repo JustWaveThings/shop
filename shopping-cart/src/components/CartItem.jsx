@@ -14,34 +14,13 @@ function CartItem({ cart }) {
 				<div>${item.price}</div>
 			</div>
 			<div className="cart--item--qty">
-				<button
-					onClick={() => decrementQty()}
-					className="product--qty--increment">
-					-
-				</button>
-				<input
-					value={item.qty}
-					onChange={(e) => handleChange(e.target.value)}
-					className="product--qty--input cart"
-					placeholder={0}
-					min={0}
-					inputMode="numeric"
-					step={1}
-					pattern="\d*"
-				/>
-				<button
-					onClick={() => incrementQty()}
-					className="product--qty--increment">
-					+
-				</button>
+				<div className="product--qty--input cart">{item.qty}</div>
 			</div>
 			<div className="cart--item--delup">
-				<button className="product--qty--increment">Update</button>
-				<button className="product--qty--increment">Delete</button>
+				<button className="product--qty--increment">Remove</button>
 			</div>
 
 			<div className="cart--item--total">
-				<div>Item Total</div>
 				<div>${(item.price * item.qty).toFixed(2)}</div>
 			</div>
 		</div>

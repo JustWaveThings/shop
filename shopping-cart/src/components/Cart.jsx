@@ -5,7 +5,10 @@ function Cart() {
 	const [cart, setCart] = useOutletContext();
 	return (
 		<Fragment>
-			<CartItem cart={cart} />
+			<CartItem
+				cart={cart}
+				setCart={setCart}
+			/>
 		</Fragment>
 	);
 }
