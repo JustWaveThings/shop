@@ -8,10 +8,7 @@ function Product({
 	price,
 	id,
 	handleChange,
-	addProductToCart,
-	cartItemQtyDecrease,
-	cartItemQtyIncrease,
-	handleCartChangeQty
+	addProductToCart
 }) {
 	const [productQty, setProductQty] = useState(0);
 
