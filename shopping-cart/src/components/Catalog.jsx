@@ -15,16 +15,22 @@ function Catalog() {
 	const [cart, setCart] = useOutletContext();
 
 	function addProductToCart(id, qty, price, title) {
-		const addProduct = {
+		const product = {
 			id: id,
 			qty: qty,
 			price: price,
 			title: title
 		};
 
-		console.log(
-			`added product ${title} to cart Qty ${qty} at price - $${price} per item. item id ${id}`
-		);
+		let productInCart = cart.some((obj) => obj.id === id);
+
+		if (productInCart) {
+			setCart((prevCart) =>
+				prevCart.map((item) => (item.id === id ? product : item))
+			);
+		} else {
+			setCart((prevCart) => [product, ...prevCart]);
+		}
 	}
 
 	//const data = useLoaderData();
@@ -69,6 +75,8 @@ function Catalog() {
 		</div>
 	);
 }
+
+export default Catalog;
 /* <Suspense fallback={<h2>Loading Products... </h2>}>
 			<Await resolve={data.product}>
 				{(product) => (
@@ -88,5 +96,3 @@ function Catalog() {
 				)}
 			</Await>
 		</Suspense> */
-
-export default Catalog;

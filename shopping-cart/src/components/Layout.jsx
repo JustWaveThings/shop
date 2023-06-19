@@ -5,11 +5,13 @@ import Footer from './Footer.jsx';
 
 function Layout() {
 	const [cart, setCart] = useState([] || null);
-	console.log(cart, 'cart');
+	console.log(cart, 'cart in layout');
+
+	const cartQty = cart.reduce((a, b) => a + b.qty, 0);
 
 	return (
 		<>
-			<Header />
+			<Header cartQty={cartQty} />
 			<Outlet context={[cart, setCart]} />
 			<Footer />
 		</>

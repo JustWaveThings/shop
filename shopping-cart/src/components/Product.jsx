@@ -65,7 +65,7 @@ function Product({
 					</button>
 				</div>
 				<button
-					onClick={() => addProductToCart(id, title, price, productQty)}
+					onClick={() => addProductToCart(id, productQty, price, title)}
 					className="product--add--to--cart">
 					{' '}
 					Add to Cart{' '}
