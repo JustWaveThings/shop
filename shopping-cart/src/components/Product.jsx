@@ -10,7 +10,8 @@ function Product({
 	handleChange,
 	addProductToCart,
 	cartItemQtyDecrease,
-	cartItemQtyIncrease
+	cartItemQtyIncrease,
+	handleCartChangeQty
 }) {
 	const [productQty, setProductQty] = useState(0);
 
@@ -21,14 +22,12 @@ function Product({
 	function incrementQty() {
 		if (productQty >= 0) {
 			setProductQty((prevValue) => prevValue + 1);
-			cartItemQtyIncrease();
 		}
 	}
 
 	function decrementQty() {
 		if (productQty >= 1) {
 			setProductQty((prevValue) => prevValue - 1);
-			cartItemQtyDecrease();
 		}
 	}
 

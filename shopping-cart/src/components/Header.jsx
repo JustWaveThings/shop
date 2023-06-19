@@ -3,7 +3,7 @@ import React from 'react';
 import cart from '../assets/shopping-cart.svg';
 import { Link } from 'react-router-dom';
 
-function Header({ number }) {
+function Header() {
 	return (
 		<div className="header--cont">
 			<div className="header--cont--left">
@@ -22,7 +22,7 @@ function Header({ number }) {
 				</Link>
 			</div>
 			<div className="header--cont--right">
-				<div className="header--cart--count">{number}</div>
+				<div className="header--cart--count">0</div>
 				<Link to="cart">
 					<img
 						className="header--cart"
