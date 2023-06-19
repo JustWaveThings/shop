@@ -29,19 +29,26 @@ function CartItem({ cart, removeFromCart }) {
 			</div>
 		</div>
 	));
+
 	return (
 		<Fragment>
-			<h2 className="cart--title">Your Order:</h2>
+			{checkoutTotal === 0 ? (
+				<h1 className="loading--text">Your cart is empty!</h1>
+			) : (
+				<Fragment>
+					<h2 className="cart--title">Your Order:</h2>
 
-			{displayCartItems}
-			<h3 className="cart--table--checkoutTotal">
-				Checkout Total: ${checkoutTotal.toFixed(2)}
-			</h3>
-			<button
-				className="cart--table-checkoutButton"
-				disabled>
-				Check Out
-			</button>
+					{displayCartItems}
+					<h3 className="cart--table--checkoutTotal">
+						Checkout Total: ${checkoutTotal.toFixed(2)}
+					</h3>
+					<button
+						className="cart--table-checkoutButton"
+						disabled>
+						Check Out
+					</button>
+				</Fragment>
+			)}
 		</Fragment>
 	);
 }

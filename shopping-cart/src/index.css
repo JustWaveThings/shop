@@ -406,3 +406,7 @@ button {
 .cart--title {
 	margin-left: 1rem;
 }
+
+.loading--text {
+	margin: auto;
+}

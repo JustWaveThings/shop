@@ -40,7 +40,7 @@ function Catalog() {
 
 	return (
 		<Suspense
-			fallback={<h2 className="loading--text">Loading Products... </h2>}>
+			fallback={<h1 className="loading--text">Loading Products... </h1>}>
 			<Await resolve={data.product}>
 				{(product) => (
 					<div className="catalog--cont">
