@@ -1,7 +1,13 @@
-import React from "react";
-
+import React, { Fragment } from 'react';
+import CartItem from './CartItem';
+import { useOutletContext } from 'react-router-dom';
 function Cart() {
-  return <div>Cart</div>;
+	const [cart, setCart] = useOutletContext();
+	return (
+		<Fragment>
+			<CartItem cart={cart} />
+		</Fragment>
+	);
 }
 
 export default Cart;

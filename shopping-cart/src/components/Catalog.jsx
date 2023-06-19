@@ -48,7 +48,7 @@ function Catalog() {
 								<Product
 									image={prod.image}
 									description={prod.description}
-									price={prod.price}
+									price={prod.price.toFixed(2)}
 									title={prod.title}
 									id={prod.id}
 									addProductToCart={addProductToCart}
