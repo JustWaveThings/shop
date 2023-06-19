@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from './Footer.jsx';
 
 function Layout() {
-	const [cart, setCart] = useState([] || null);
+	const [cart, setCart] = useState([]);
 	console.log(cart, 'cart array');
 
 	const cartQty = cart.reduce((a, b) => a + b.qty, 0);

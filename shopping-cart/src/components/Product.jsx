@@ -8,9 +8,15 @@ function Product({
 	price,
 	id,
 	handleChange,
-	addProductToCart
+	addProductToCart,
+	cart
 }) {
-	const [productQty, setProductQty] = useState(0);
+	const [productQty, setProductQty] = useState(Number(syncCartQty(id)));
+
+	function syncCartQty(id) {
+		const item = cart.find((item) => item.id === id);
+		return item ? item.qty : 0;
+	}
 
 	function handleChange(value) {
 		setProductQty(+value);

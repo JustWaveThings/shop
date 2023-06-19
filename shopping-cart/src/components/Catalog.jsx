@@ -39,7 +39,8 @@ function Catalog() {
 	}
 
 	return (
-		<Suspense fallback={<h2>Loading Products... </h2>}>
+		<Suspense
+			fallback={<h2 className="loading--text">Loading Products... </h2>}>
 			<Await resolve={data.product}>
 				{(product) => (
 					<div className="catalog--cont">
@@ -52,6 +53,7 @@ function Catalog() {
 									title={prod.title}
 									id={prod.id}
 									addProductToCart={addProductToCart}
+									cart={cart}
 								/>
 							</Fragment>
 						))}
