@@ -1,18 +1,19 @@
 /* eslint-disable react/prop-types */
 import React, { Fragment, Suspense } from 'react';
 import Product from './Product';
-// import getProducts from '../api';
-//import { useLoaderData, defer, Await } from 'react-router-dom';
+import getProducts from '../api';
+import { useLoaderData, defer, Await } from 'react-router-dom';
 import { useOutletContext } from 'react-router-dom';
 
-/* export async function loader() {
+export async function loader() {
 	return defer({
 		product: getProducts()
 	});
-} */
+}
 
 function Catalog() {
 	const [cart, setCart] = useOutletContext();
+	const data = useLoaderData();
 
 	function addProductToCart(id, qty, price, title) {
 		const product = {
@@ -25,59 +26,20 @@ function Catalog() {
 		let productInCart = cart.some((obj) => obj.id === id);
 
 		if (productInCart) {
-			setCart((prevCart) =>
-				prevCart.map((item) => (item.id === id ? product : item))
-			);
+			if (qty === 0) {
+				setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+			} else {
+				setCart((prevCart) =>
+					prevCart.map((item) => (item.id === id ? product : item))
+				);
+			}
 		} else {
 			setCart((prevCart) => [product, ...prevCart]);
 		}
 	}
 
-	//const data = useLoaderData();
-	const fakeData = [
-		{
-			id: 1,
-			title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-			price: 109.95,
-			description:
-				'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday',
-			category: "men's clothing",
-			image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-			rating: { rate: 3.9, count: 120 }
-		},
-		{
-			id: 2,
-			title: 'Mens Casual Premium Slim Fit T-Shirts ',
-			price: 22.3,
-			description:
-				'Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.',
-			category: "men's clothing",
-			image:
-				'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
-			rating: { rate: 4.1, count: 259 }
-		}
-	];
 	return (
-		<div className="catalog--cont">
-			{' '}
-			{fakeData.map((prod) => (
-				<Fragment key={prod.id}>
-					<Product
-						image={prod.image}
-						description={prod.description}
-						price={prod.price}
-						title={prod.title}
-						id={prod.id}
-						addProductToCart={addProductToCart}
-					/>
-				</Fragment>
-			))}
-		</div>
-	);
-}
-
-export default Catalog;
-/* <Suspense fallback={<h2>Loading Products... </h2>}>
+		<Suspense fallback={<h2>Loading Products... </h2>}>
 			<Await resolve={data.product}>
 				{(product) => (
 					<div className="catalog--cont">
@@ -89,10 +51,14 @@ export default Catalog;
 									price={prod.price}
 									title={prod.title}
 									id={prod.id}
+									addProductToCart={addProductToCart}
 								/>
 							</Fragment>
 						))}
 					</div>
 				)}
 			</Await>
-		</Suspense> */
+		</Suspense>
+	);
+}
+export default Catalog;
