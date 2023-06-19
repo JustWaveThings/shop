@@ -8,7 +8,9 @@ function Product({
 	price,
 	id,
 	handleChange,
-	addProductToCart
+	addProductToCart,
+	cartItemQtyDecrease,
+	cartItemQtyIncrease
 }) {
 	const [productQty, setProductQty] = useState(0);
 
@@ -17,11 +19,17 @@ function Product({
 	}
 
 	function incrementQty() {
-		productQty >= 0 ? setProductQty((prevValue) => prevValue + 1) : null;
+		if (productQty >= 0) {
+			setProductQty((prevValue) => prevValue + 1);
+			cartItemQtyIncrease();
+		}
 	}
 
 	function decrementQty() {
-		productQty >= 1 ? setProductQty((prevValue) => prevValue - 1) : null;
+		if (productQty >= 1) {
+			setProductQty((prevValue) => prevValue - 1);
+			cartItemQtyDecrease();
+		}
 	}
 
 	return (
@@ -49,7 +57,9 @@ function Product({
 						className="product--qty--input"
 						placeholder={0}
 						min={0}
-						type="number"
+						inputMode="numeric"
+						step={1}
+						pattern="\d*"
 					/>
 
 					<button

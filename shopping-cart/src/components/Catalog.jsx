@@ -13,6 +13,17 @@ import { useOutletContext } from 'react-router-dom';
 
 function Catalog() {
 	const [cart, setCart] = useOutletContext();
+	const [number, setNumber] = useOutletContext();
+
+	function cartItemQtyIncrease() {
+		console.log('cartItemQtyIncrease');
+		setNumber((prevNumber) => prevNumber + 1);
+	}
+
+	function cartItemQtyDecrease() {
+		console.log('cartItemQtyDecrease');
+		setNumber((prevNumber) => prevNumber - 1);
+	}
 
 	function addProductToCart(id, qty, price, title) {
 		const addProduct = {
@@ -63,6 +74,8 @@ function Catalog() {
 						title={prod.title}
 						id={prod.id}
 						addProductToCart={addProductToCart}
+						cartItemQtyDecrease={cartItemQtyDecrease}
+						cartItemQtyIncrease={cartItemQtyIncrease}
 					/>
 				</Fragment>
 			))}

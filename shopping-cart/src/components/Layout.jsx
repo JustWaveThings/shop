@@ -5,11 +5,13 @@ import Footer from './Footer.jsx';
 
 function Layout() {
 	const [cart, setCart] = useState([] || null);
-	console.log(cart);
+	const [number, setNumber] = useState(0);
+	console.log(cart, 'cart');
+	console.log(number, 'number');
 	return (
 		<>
-			<Header />
-			<Outlet context={[cart, setCart]} />
+			<Header number={number} />
+			<Outlet context={([cart, setCart], [number, setNumber])} />
 			<Footer />
 		</>
 	);
