@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component snapshot test for Catalog component 1`] = `
+<div>
+  <div
+    class="header--cont"
+  >
+    <div
+      class="header--cont--left"
+    >
+      <a
+        class="header--title"
+        href="/"
+      >
+        the Shop
+      </a>
+      <div
+        class="header--subtitle"
+      >
+         Your one-stop shop
+      </div>
+    </div>
+    <div
+      class="header--cont--center"
+    >
+      <a
+        class="header--link--catalog"
+        href="/catalog"
+      >
+        Catalog
+      </a>
+    </div>
+    <div
+      class="header--cont--right"
+    >
+      <div
+        class="header--cart--count"
+        data-testid="cartQty"
+      >
+        0
+      </div>
+      <a
+        href="/cart"
+      >
+        <img
+          alt="Shopping Cart Icon"
+          class="header--cart"
+          src="shopping-cart.svg"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    class="home--cont"
+  >
+    <div
+      class="home--cta--text--button"
+    >
+      <h1
+        class="home--title"
+      >
+        Chopping prices on what you want!
+      </h1>
+      <a
+        href="/catalog"
+      >
+        <button
+          class="home--button"
+        >
+          Shop Now!
+        </button>
+      </a>
+    </div>
+  </div>
+  <div
+    class="footer--cont"
+  >
+    2023 JustWaveThings
+     
+    <a
+      href="https://github.com/JustWaveThings"
+    >
+      <img
+        alt="github"
+        height="20"
+        src="github-mark-white.png"
+      />
+    </a>
+     
+  </div>
+</div>
+`;

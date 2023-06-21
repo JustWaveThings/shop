@@ -22,7 +22,11 @@ function Header({ cartQty }) {
 				</Link>
 			</div>
 			<div className="header--cont--right">
-				<div className="header--cart--count">{cartQty}</div>
+				<div
+					className="header--cart--count"
+					data-testid="cartQty">
+					{cartQty}
+				</div>
 				<Link to="cart">
 					<img
 						className="header--cart"
