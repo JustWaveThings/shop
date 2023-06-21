@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cra-react-router-jest-shopping-cart/static/css/main.ea3fa63a.css",
+    "main.js": "/cra-react-router-jest-shopping-cart/static/js/main.7192f072.js",
+    "static/media/cat.png": "/cra-react-router-jest-shopping-cart/static/media/cat.3221fcd678a2ab623676.png",
+    "static/media/knife_hero.jpg": "/cra-react-router-jest-shopping-cart/static/media/knife_hero.8f457f069673e2bd51d4.jpg",
+    "index.html": "/cra-react-router-jest-shopping-cart/index.html",
+    "static/media/shopping-cart.svg": "/cra-react-router-jest-shopping-cart/static/media/shopping-cart.4156d69038555913021b3a3c5c3f70cc.svg",
+    "main.ea3fa63a.css.map": "/cra-react-router-jest-shopping-cart/static/css/main.ea3fa63a.css.map",
+    "main.7192f072.js.map": "/cra-react-router-jest-shopping-cart/static/js/main.7192f072.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea3fa63a.css",
+    "static/js/main.7192f072.js"
+  ]
+}
