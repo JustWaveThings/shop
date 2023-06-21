@@ -1,5 +1,6 @@
 {
   "name": "shopping-cart",
+  "homepage": "https://justwavethings.github.io/cra-react-router-jest-shopping-cart",
   "version": "0.1.0",
   "private": true,
   "type": "module",
