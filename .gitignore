@@ -127,3 +127,4 @@ dist
 .pnp.*
 shopping-cart/newnote.md
 shopping-cart/image.png
+.vscode/settings.json
