@@ -15,13 +15,13 @@
 - Implemented loaders to prevent a 'loading waterfall' effect commonly seen in less sophisticated implementations
 - Populated product data by making an asynchronous API call to a shopping products API
 
+### ✨ [Demo](https://justwavethings.github.io/cra-react-router-jest-shopping-cart/)
+
 ### Screenshots
 
-<img src="../cra-react-router-jest-shopping-cart/2023-07-03-12-23-57.png" alt="Catalog Screenshot" width="400"/>
+<img src="https://github.com/JustWaveThings/cra-react-router-jest-shopping-cart/blob/main/2023-07-03-12-23-57.png?raw=true" width="400"/>
 
-<img src="../cra-react-router-jest-shopping-cart/Screenshot%202023-07-03%20at%2012.27.33%20PM.png" alt="Shopping Cart Screenshot" width="400"/>
-
-### ✨ [Demo](https://justwavethings.github.io/cra-react-router-jest-shopping-cart/)
+<img src="https://github.com/JustWaveThings/cra-react-router-jest-shopping-cart/blob/main/Screenshot%202023-07-03%20at%2012.27.33%20PM.png?raw=true" alt="Shopping Cart Screenshot" width="400"/>
 
 ## Install
 
