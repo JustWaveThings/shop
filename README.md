@@ -15,7 +15,7 @@
 - Implemented loaders to prevent a 'loading waterfall' effect commonly seen in less sophisticated implementations
 - Populated product data by making an asynchronous API call to a shopping products API
 
-### ✨ [Demo](https://justwavethings.github.io/cra-react-router-jest-shopping-cart/)
+### ✨ [Demo](https://justwavethings.github.io/shop/)
 
 ### Screenshots
 
