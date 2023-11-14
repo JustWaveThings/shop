@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/shop/static/css/main.cc011bf1.css",
-    "main.js": "/shop/static/js/main.a63afcc8.js",
+    "main.js": "/shop/static/js/main.fff201b8.js",
     "static/media/cat.png": "/shop/static/media/cat.3221fcd678a2ab623676.png",
     "static/media/knife_hero.jpg": "/shop/static/media/knife_hero.8f457f069673e2bd51d4.jpg",
     "index.html": "/shop/index.html",
     "static/media/shopping-cart.svg": "/shop/static/media/shopping-cart.4156d69038555913021b3a3c5c3f70cc.svg",
     "main.cc011bf1.css.map": "/shop/static/css/main.cc011bf1.css.map",
-    "main.a63afcc8.js.map": "/shop/static/js/main.a63afcc8.js.map"
+    "main.fff201b8.js.map": "/shop/static/js/main.fff201b8.js.map"
   },
   "entrypoints": [
     "static/css/main.cc011bf1.css",
-    "static/js/main.a63afcc8.js"
+    "static/js/main.fff201b8.js"
   ]
 }
