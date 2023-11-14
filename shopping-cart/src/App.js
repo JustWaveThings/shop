@@ -35,7 +35,10 @@ const router = createBrowserRouter(
 				element={<NotFound />}
 			/>
 		</Route>
-	)
+	),
+	{
+		basename: '/shop/'
+	}
 );
 
 function App() {
