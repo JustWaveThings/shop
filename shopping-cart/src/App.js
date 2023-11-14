@@ -15,7 +15,7 @@ import NotFound from './components/NotFound.jsx';
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route
-			path="shop"
+			path="/"
 			element={<Layout />}>
 			<Route
 				index
