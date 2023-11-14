@@ -30,6 +30,7 @@ const router = createBrowserRouter(
 				path="cart"
 				element={<Cart />}
 			/>
+			{/* This catch-all route DOES NOT WORK in a GH pages deployment due to how GH interacts with the CRA react app. Given that CRA is now deprecated, and the solution to the issue is to use HashRouter, which is strongly discouraged to use, I am going to leave this 'as-is' */}
 			<Route
 				path="*"
 				element={<NotFound />}
