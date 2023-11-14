@@ -446,9 +446,20 @@ button {
 }
 
 .cart--title {
-	margin-left: 1rem;
+	margin: 1rem;
 }
 
 .loading--text {
 	margin: auto;
+}
+
+@media (max-width: 425px) {
+	.cart--item--cont {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.cart--table--checkoutTotal {
+		margin: auto;
+	}
 }
