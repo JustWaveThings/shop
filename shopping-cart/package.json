@@ -1,6 +1,6 @@
 {
 	"name": "shopping-cart",
-	"homepage": "https://justwavethings.github.io/shop",
+	"homepage": "https://justwavethings.github.io/shop/",
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
