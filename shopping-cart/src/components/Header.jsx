@@ -8,7 +8,7 @@ function Header({ cartQty }) {
 		<div className="header--cont">
 			<div className="header--cont--left">
 				<Link
-					to="/"
+					to="shop"
 					className="header--title">
 					the Shop
 				</Link>
